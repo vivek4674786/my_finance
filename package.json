@@ -8,5 +8,8 @@
     "start": "node server.js"
   },
   "author": "vivek kandoliya",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sequelize": "^6.37.3"
+  }
 }
