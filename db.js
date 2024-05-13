@@ -2,6 +2,10 @@
 const mysql = require('mysql2');
 require('dotenv').config();
 
+
+//importing local modules
+
+
 // ===== Convetional Method ======
 
 // const pool = mysql.createPool({
@@ -24,15 +28,15 @@ require('dotenv').config();
 // });
 
 
-// =====  Sequalize method ======
+// =====  Sequelize method ======
 
-const Sequalize = require('sequelize');
+const Sequelize = require('sequelize');
 
-console.log(process.env.DB);
+console.log(process.env.DATABASE);
 console.log(process.env.USER_NAME);
 console.log(process.env.PASSWORD);
-const sequelize = new Sequalize(
-  process.env.DB,
+const sequelize = new Sequelize(
+  process.env.DATABASE,
   process.env.USER_NAME,
   process.env.PASSWORD,
   // 'my_finance2',
@@ -47,8 +51,22 @@ const sequelize = new Sequalize(
 sequelize.authenticate().then(() => {
   console.log('connection has been established successfully');
 }).catch((error) => {
-  console.log('Could not connect database. due to ',error); 
+  console.log('Could not connect database. due to ', error);
 });
 
-
 module.exports = sequelize;
+
+const Users = require('./models/users');
+const ProfilePhotoHistory = require('./models/profilePhotoHistory');
+const Timeline = require('./models/timeline');
+const Permissions = require('./models/permissions');
+const UserPermissions = require('./models/userPermissions');
+
+sequelize.sync().then(() => {
+  console.log('models synced successfully!');
+}).catch((error) => {
+  console.error('Unable to create table : ', error);
+});
+
+module.exports = { Users, ProfilePhotoHistory, Timeline, Permissions, UserPermissions}
+// require('./models/users')

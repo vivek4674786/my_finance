@@ -4,15 +4,19 @@ this file contains validation objects for express validators
 */
 
 const { body } = require('express-validator');
-const db = require('../db');
+const {Users} = require('../db');
 
 const registerValidator = [
   body('email','email is invalid').trim().isEmail(),
   body('email').custom(async value => {
 
-    const [counts] = await db.query('select count(*) as count from users where email = ?',[value]);
-    console.log(counts[0].count)
-    if(counts[0].count != 0)
+    const counts = await Users.findAll({
+      where: {
+        email: value
+      }
+    })
+
+    if(counts.length != 0)
       throw new Error('user with this email already exist')
 
   }),

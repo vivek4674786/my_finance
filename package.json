@@ -5,11 +5,13 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "vivek kandoliya",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "randomstring": "^1.3.0",
     "sequelize": "^6.37.3"
   }
 }

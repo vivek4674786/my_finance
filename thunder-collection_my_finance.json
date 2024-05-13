@@ -1,0 +1,40 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "my_finance",
+    "collectionId": "26e8cd62-dbb4-4f69-9eba-a2579b74eca9",
+    "dateExported": "2024-05-13T13:28:32.526Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8f5d5fc4-e29a-47c0-9a4b-37c0bd0f3d39",
+            "colId": "26e8cd62-dbb4-4f69-9eba-a2579b74eca9",
+            "containerId": "",
+            "name": "register",
+            "url": "localhost:8095/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-11T09:44:33.371Z",
+            "modified": "2024-05-13T13:20:47.259Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"vivek1@gmail.com\",\n  \"first_name\": \"vivek\",\n  \"last_name\": \"kandoliya\",\n  \"password\": \"Un0h001m!\"\n} ",
+                "form": []
+            }
+        },
+        {
+            "_id": "40520088-2c2f-4150-a5ec-f07602df59ba",
+            "colId": "26e8cd62-dbb4-4f69-9eba-a2579b74eca9",
+            "containerId": "",
+            "name": "login",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-11T11:32:31.115Z",
+            "modified": "2024-05-11T11:32:31.115Z",
+            "headers": []
+        }
+    ],
+    "ref": "G97AULg0TY9rNlFfIwhgfpNTXbrY0ohUrvIlKVn-nafEf5enK4sL4pk_Y3vXL68KlYY7jMfuYSEoRy8B-QTYag"
+}
